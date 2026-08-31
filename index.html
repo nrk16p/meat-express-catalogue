@@ -202,9 +202,11 @@
   .item.in { opacity: 1; transform: none; }
   .item.flip .shot { order: 2; }
 
+  /* no height here — the grid stretches this cell to the card's row height,
+     which .item's min-height makes definite. Safari refuses to resolve
+     aspect-ratio on a stretched item, so never depend on it for height. */
   .shot {
     position: relative;
-    height: 100%;
     background: var(--paper-2);
     overflow: hidden;
   }
@@ -521,7 +523,17 @@
 
     .item { grid-template-columns: 1fr; gap: 0; min-height: 0; }
     .item.flip .shot { order: 0; }
-    .shot { aspect-ratio: 4 / 3; height: auto; }
+    /* put the photo back in normal flow so it sets the height itself.
+       Falls back to the image's own ratio if aspect-ratio is unsupported —
+       taller than intended, but always visible. */
+    .shot { align-self: start; height: auto; }
+    .shot img {
+      position: static;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
     .detail { padding: 26px 22px 30px; }
     .calc-grid { grid-template-columns: 1fr; }
     .spec-list { max-width: none; }
