@@ -2,17 +2,18 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meat Express Selection — MEAT EXPRESS</title>
-<meta name="description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ">
-<meta name="theme-color" content="#D32026">
+<meta name="description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ โทร 083-879-4554">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="format-detection" content="telephone=no">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23D32026'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-weight='bold' font-size='26' fill='%23FFFFFF' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Meat Express Selection — MEAT EXPRESS">
-<meta property="og:description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ">
+<meta property="og:description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ โทร 083-879-4554">
 <meta property="og:image" content="images/1-brisket.jpg">
 <meta property="og:locale" content="th_TH">
-<link rel="preload" as="image" href="images/logo-white.png">
+<link rel="preload" as="image" href="images/logo-red.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600&display=swap">
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -22,20 +23,15 @@
 </head>
 <body>
 <style>
+  /* MEAT EXPRESS — white ground, brand red, grey as the quiet 10% */
   :root {
-    /* brand */
-    --red:        #D32026;
-    --red-bright: #E8474C;
-    --red-deep:   #A5171C;
-
-    /* warm near-black neutrals, biased toward the brand red */
-    --ink:        #121011;
-    --panel:      #1C1719;
-    --panel-hi:   #2A2224;
-    --line:       #3A3032;
-    --bone:       #F5F0EC;
-    --bone-dim:   #D9CFCB;
-    --muted:      #A5989A;
+    --paper:    #FFFFFF;
+    --paper-2:  #F5F3F3;
+    --red:      #D32026;
+    --red-deep: #A5171C;
+    --ink:      #1F1B1C;
+    --grey:     #726B6C;
+    --line:     #E3DFDF;
 
     --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
     --font-th-display: "Noto Serif Thai", "Bodoni Moda", serif;
@@ -50,8 +46,8 @@
 
   body {
     margin: 0;
-    background: var(--ink);
-    color: var(--bone);
+    background: var(--paper);
+    color: var(--ink);
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 16px;
@@ -62,54 +58,35 @@
   .page { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 
   a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--red-bright); outline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
   .eyebrow {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.34em;
     text-transform: uppercase;
-    color: var(--red-bright);
+    color: var(--red);
   }
 
   /* the slice mark: stacked hairlines, echoing fanned shabu slices */
   .slices { display: flex; flex-direction: column; gap: 4px; margin-bottom: 22px; }
-  .slices i { display: block; height: 1px; background: var(--red); border-radius: 1px; }
+  .slices i { display: block; height: 2px; background: var(--red); border-radius: 1px; }
   .slices i:nth-child(1) { width: 64px; opacity: 1; }
-  .slices i:nth-child(2) { width: 48px; opacity: 0.72; }
-  .slices i:nth-child(3) { width: 34px; opacity: 0.46; }
-  .slices i:nth-child(4) { width: 22px; opacity: 0.24; }
+  .slices i:nth-child(2) { width: 48px; opacity: 0.66; }
+  .slices i:nth-child(3) { width: 34px; opacity: 0.40; }
+  .slices i:nth-child(4) { width: 22px; opacity: 0.20; }
 
-  /* ---------- cover: full brand red, the logo sits on its native ground ---------- */
+  /* ---------- cover ---------- */
 
   .cover {
-    background: var(--red);
-    margin: 0 calc(-1 * var(--gutter));
-    padding: clamp(30px, 6vh, 66px) var(--gutter) clamp(38px, 7vh, 76px);
-    min-height: min(94svh, 880px);
+    min-height: min(92svh, 860px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-  }
-  .cover::after {
-    content: "";
-    position: absolute;
-    inset: auto -20% -55% -20%;
-    height: 70%;
-    background: radial-gradient(50% 60% at 50% 100%, rgba(18,16,17,0.28), transparent 72%);
-    pointer-events: none;
+    padding: clamp(30px, 6vh, 66px) 0 clamp(38px, 7vh, 76px);
   }
 
-  .brand { position: relative; z-index: 1; }
-  .brand img {
-    display: block;
-    width: clamp(190px, 26vw, 310px);
-    height: auto;
-  }
-
-  .cover-type { position: relative; z-index: 1; }
+  .brand img { display: block; width: clamp(190px, 26vw, 320px); height: auto; }
 
   .cover h1 {
     font-family: var(--font-display);
@@ -118,22 +95,19 @@
     line-height: 0.94;
     letter-spacing: -0.015em;
     margin: 0;
-    color: #fff;
+    color: var(--ink);
     text-wrap: balance;
   }
-  /* red / white / black — the butcher's three tones */
-  .cover h1 em { font-style: italic; color: var(--ink); font-weight: 400; }
+  .cover h1 em { font-style: italic; color: var(--red); font-weight: 400; }
 
-  .cover .rule { height: 1px; background: rgba(255,255,255,0.55); margin: 32px 0 24px; }
-  .cover .rule.dark { background: rgba(18,16,17,0.35); }
-
-  .cover .eyebrow { color: rgba(255,255,255,0.82); }
+  .cover .rule { height: 2px; background: var(--red); margin: 32px 0 24px; }
+  .cover .rule.thin { height: 1px; background: var(--line); }
 
   .cover .sub {
     font-family: var(--font-th-display);
     font-size: clamp(17px, 2.4vw, 23px);
     font-weight: 400;
-    color: #fff;
+    color: var(--grey);
     margin: 0;
     max-width: 32ch;
     line-height: 1.55;
@@ -142,8 +116,9 @@
   /* ---------- index ---------- */
 
   .index {
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 30px 0;
+    padding: 28px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 14px 48px;
@@ -159,12 +134,12 @@
     font-size: 19px;
     transition: color .25s ease;
   }
-  .index a:hover { color: var(--red-bright); }
+  .index a:hover { color: var(--red); }
   .index a b {
     font-family: var(--font-display);
-    font-weight: 500;
+    font-weight: 700;
     font-size: 13px;
-    color: var(--red-bright);
+    color: var(--red);
     font-variant-numeric: tabular-nums;
   }
 
@@ -183,7 +158,7 @@
     font-size: clamp(120px, 24vw, 280px);
     line-height: 0.8;
     color: var(--red);
-    opacity: 0.20;
+    opacity: 0.10;
     pointer-events: none;
     user-select: none;
   }
@@ -198,11 +173,11 @@
   .chapter-head .th {
     font-family: var(--font-th-display);
     font-size: clamp(15px, 2vw, 19px);
-    color: var(--muted);
+    color: var(--grey);
     margin: 0;
     position: relative;
   }
-  .chapter-head .bar { width: 90px; height: 3px; background: var(--red); margin-bottom: 26px; }
+  .chapter-head .bar { width: 90px; height: 4px; background: var(--red); margin-bottom: 26px; }
 
   /* ---------- product ---------- */
 
@@ -223,10 +198,7 @@
   .shot {
     position: relative;
     aspect-ratio: 4 / 5;
-    background:
-      repeating-linear-gradient(135deg, rgba(211,32,38,0.07) 0 2px, transparent 2px 11px),
-      linear-gradient(160deg, var(--panel-hi), var(--panel));
-    border: 1px solid var(--line);
+    background: var(--paper-2);
     overflow: hidden;
   }
   .shot img {
@@ -236,23 +208,15 @@
     display: block;
     z-index: 0;
   }
-  .shot .veil {
-    position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background: linear-gradient(180deg,
-      rgba(18,16,17,0.34) 0%,
-      rgba(18,16,17,0.02) 38%,
-      rgba(18,16,17,0.10) 62%,
-      rgba(18,16,17,0.58) 100%);
-  }
   .shot::before, .shot::after {
     content: "";
     position: absolute;
-    width: 26px; height: 26px;
-    border: 2px solid var(--red);
+    width: 28px; height: 28px;
+    border: 3px solid var(--red);
     z-index: 2;
   }
-  .shot::before { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
-  .shot::after  { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+  .shot::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+  .shot::after  { bottom: 0; right: 0; border-left: 0; border-top: 0; }
 
   .detail { min-width: 0; }
 
@@ -268,7 +232,7 @@
   .name-en a svg {
     width: 15px; height: 15px;
     opacity: 0;
-    color: var(--red-bright);
+    color: var(--red);
     transition: opacity .25s ease;
     flex: none;
   }
@@ -277,91 +241,142 @@
   .name-th {
     font-family: var(--font-th-display);
     font-size: clamp(16px, 2.1vw, 20px);
-    color: var(--red-bright);
+    color: var(--red);
     margin: 0 0 20px;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .desc {
     margin: 0 0 26px;
     max-width: var(--measure);
-    color: var(--bone-dim);
+    color: var(--grey);
     font-size: clamp(15px, 1.7vw, 17px);
   }
 
   .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 9px; }
-  .chips li { font-size: 13px; line-height: 1; padding: 10px 15px; border-radius: 2px; white-space: nowrap; }
-  .chips .benefit {
-    background: rgba(211,32,38,0.20);
-    border: 1px solid rgba(232,71,76,0.46);
-    color: var(--bone);
-    font-weight: 500;
-  }
+  .chips li { font-size: 13px; line-height: 1; padding: 11px 16px; border-radius: 2px; white-space: nowrap; }
+  /* จุดขาย = ทึบแดง · สเปก/ข้อเท็จจริง = เส้นขอบเทา */
+  .chips .benefit { background: var(--red); color: #fff; font-weight: 500; }
   .chips .spec {
     border: 1px solid var(--line);
-    color: var(--muted);
+    color: var(--grey);
     font-weight: 400;
     letter-spacing: 0.06em;
     font-variant-numeric: tabular-nums;
   }
   .chips .spec b {
-    color: var(--bone);
-    font-weight: 500;
+    color: var(--ink);
+    font-weight: 600;
     margin-right: 7px;
     letter-spacing: 0.16em;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* ---------- footer ---------- */
+  /* ---------- footer: red band closes the book ---------- */
 
   .closing {
-    margin-top: clamp(80px, 14vh, 150px);
-    border-top: 3px solid var(--red);
-    padding: clamp(44px, 8vh, 78px) 0 clamp(40px, 7vh, 70px);
+    margin: clamp(80px, 14vh, 150px) calc(-1 * var(--gutter)) 0;
+    padding: clamp(48px, 9vh, 84px) var(--gutter) clamp(44px, 8vh, 76px);
+    background: var(--red);
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 36px;
+    gap: 40px;
     align-items: end;
   }
-  .closing p { margin: 0; color: var(--muted); font-size: 15px; max-width: 46ch; }
-  .tel {
+  .closing .eyebrow { color: rgba(255,255,255,0.85); }
+  .closing p { margin: 0; color: rgba(255,255,255,0.9); font-size: 15px; max-width: 46ch; }
+
+  .contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 34px; margin: 20px 0 16px; }
+  .contact a {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin: 22px 0 14px;
     text-decoration: none;
+    color: #fff;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(28px, 4.6vw, 46px);
-    color: var(--red-bright);
+    font-size: clamp(26px, 4.2vw, 44px);
     font-variant-numeric: tabular-nums;
-    transition: color .25s ease;
+    transition: opacity .25s ease;
   }
-  .tel:hover { color: var(--bone); }
-  .tel svg { width: 0.62em; height: 0.62em; flex: none; opacity: 0.75; }
+  .contact a:hover { opacity: 0.72; }
+  .contact a svg { width: 0.6em; height: 0.6em; flex: none; opacity: 0.8; }
+  .contact .label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    display: block;
+    margin-bottom: 2px;
+  }
 
   .closing .sign { text-align: right; }
-  .closing .sign img { display: block; width: 150px; height: auto; margin-left: auto; opacity: 0.9; }
+  .closing .sign img { display: block; width: 160px; height: auto; margin-left: auto; }
   .closing .sign span {
     display: block;
     margin-top: 14px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.8);
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
+  /* ---------- mobile contact dock ---------- */
+
+  .dock { display: none; }
+  .dock-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 54px;
+    padding: 0 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dock-btn svg { width: 19px; height: 19px; flex: none; }
+  .dock-btn.solid { background: var(--red); color: #fff; }
+  .dock-btn.solid:active { background: var(--red-deep); }
+  .dock-btn.ghost { background: var(--paper); color: var(--red); border: 2px solid var(--red); }
+  .dock-btn.ghost:active { background: var(--paper-2); }
+
   /* ---------- responsive ---------- */
 
   @media (max-width: 800px) {
+    .dock {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 50;
+      padding: 9px 12px;
+      padding-bottom: calc(9px + env(safe-area-inset-bottom, 0px));
+      background: rgba(255,255,255,0.94);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+    }
+    body { padding-bottom: 96px; }
+
     .item { grid-template-columns: 1fr; gap: 28px; }
     .item.flip .shot { order: 0; }
     .shot { aspect-ratio: 4 / 3; }
-    .chapter-head .numeral { font-size: clamp(96px, 34vw, 190px); opacity: 0.16; }
+    .chapter-head .numeral { font-size: clamp(96px, 34vw, 190px); opacity: 0.09; }
     .closing { grid-template-columns: 1fr; align-items: start; }
     .closing .sign { text-align: left; }
     .closing .sign img { margin-left: 0; }
+    .contact { flex-direction: column; gap: 16px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -370,14 +385,10 @@
   }
 
   @media print {
-    body { background: #fff; color: #111; }
-    .cover { min-height: auto; background: var(--red) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .closing { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .chapter-head .numeral { display: none; }
-    .name-en, .chapter-head h2 { color: #111; }
-    .desc { color: #333; }
     .item { opacity: 1; transform: none; break-inside: avoid; page-break-inside: avoid; }
     .chapter { break-before: page; page-break-before: always; }
-    .shot { border-color: #bbb; }
   }
 </style>
 
@@ -385,14 +396,14 @@
 
   <header class="cover">
     <div class="brand">
-      <img src="images/logo-white.png" alt="MEAT EXPRESS — Pork &amp; Beef Butcher Shop">
+      <img src="images/logo-red.png" alt="MEAT EXPRESS — Pork &amp; Beef Butcher Shop">
     </div>
 
     <div class="cover-type">
       <p class="eyebrow">Catalogue 2026</p>
       <div class="rule"></div>
       <h1>Premium Selection<br><em>for Shabu &amp; Buffet</em></h1>
-      <div class="rule dark"></div>
+      <div class="rule thin"></div>
       <p class="sub">แคตตาล็อกสินค้าวัตถุดิบนำเข้าพรีเมียม</p>
     </div>
   </header>
@@ -418,7 +429,6 @@
         <article class="item" id="brisket">
           <div class="shot">
             <img src="images/1-brisket.jpg" alt="เนื้อบริสเกตนำเข้าสไลซ์บาง เห็นลายไขมันแทรกทั่วแผ่น" loading="lazy" decoding="async">
-            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -436,7 +446,6 @@
         <article class="item flip" id="ribeye">
           <div class="shot">
             <img src="images/2-ribeye.jpg" alt="เนื้อริบอายดิบ เห็นลายหินอ่อนและสันไขมันรอบชิ้น" loading="lazy" decoding="async">
-            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -467,7 +476,6 @@
         <article class="item" id="crystal-shrimp">
           <div class="shot">
             <img src="images/3-shrimp.jpg" alt="กุ้งแก้วปอกเปลือกแช่น้ำแข็งในชามสเตนเลส" loading="lazy" decoding="async">
-            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -485,7 +493,6 @@
         <article class="item flip" id="dolly-fish">
           <div class="shot">
             <img src="images/4-fish.jpg" alt="เนื้อปลาดอลลี่แล่ขาว วางบนน้ำแข็ง" loading="lazy" decoding="async">
-            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -503,7 +510,6 @@
         <article class="item" id="chilean-mussels">
           <div class="shot">
             <img src="images/5-mussel.jpg" alt="หอยแมลงภู่ชิลีจัดเรียงเป็นวงบนจานสีน้ำเงิน" loading="lazy" decoding="async">
-            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -526,7 +532,16 @@
   <footer class="closing">
     <div>
       <p class="eyebrow">สั่งซื้อ / สอบถามราคา</p>
-      <a class="tel" href="tel:+66838794554"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>083-879-4554</a>
+      <div class="contact">
+        <span>
+          <span class="label">โทร</span>
+          <a href="tel:+66838794554"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>083-879-4554</a>
+        </span>
+        <span>
+          <span class="label">Line</span>
+          <a href="https://line.me/ti/p/~pppach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 11.2c0-4-4-7.2-9-7.2S3 7.2 3 11.2c0 3.6 3.2 6.6 7.5 7.1.3.1.7.2.8.5.1.3.1.6 0 .9l-.1.8c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6 1.5-1.6 1.7-3.3 1.7-3.9z"/></svg>pppach</a>
+        </span>
+      </div>
       <p>สอบถามราคา ขนาดบรรจุ และระยะเวลาจัดส่ง &middot; ราคายังไม่รวม VAT 7%</p>
     </div>
     <div class="sign">
@@ -536,6 +551,11 @@
   </footer>
 
 </div>
+
+<nav class="dock" aria-label="ติดต่อด่วน">
+  <a class="dock-btn ghost" href="tel:+66838794554"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>โทรเลย</a>
+  <a class="dock-btn solid" href="https://line.me/ti/p/~pppach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 11.2c0-4-4-7.2-9-7.2S3 7.2 3 11.2c0 3.6 3.2 6.6 7.5 7.1.3.1.7.2.8.5.1.3.1.6 0 .9l-.1.8c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6 1.5-1.6 1.7-3.3 1.7-3.9z"/></svg>แชท LINE</a>
+</nav>
 
 <script>
   (function () {
