@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meat Express Selection — MEAT EXPRESS</title>
 <meta name="description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ">
-<meta name="theme-color" content="#070F1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23070F1A'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23C6A15B' stroke-width='3'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='20' fill='%23C6A15B' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#D32026">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23D32026'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-weight='bold' font-size='26' fill='%23FFFFFF' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Meat Express Selection — MEAT EXPRESS">
 <meta property="og:description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ">
 <meta property="og:image" content="images/1-brisket.jpg">
 <meta property="og:locale" content="th_TH">
-<link rel="preload" as="image" href="images/1-brisket.jpg">
+<link rel="preload" as="image" href="images/logo-white.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600&display=swap">
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -23,16 +23,19 @@
 <body>
 <style>
   :root {
-    --ink:        #070F1A;
-    --panel:      #0E1B2B;
-    --panel-hi:   #16273B;
-    --line:       #23364C;
-    --gold:       #C6A15B;
-    --gold-hi:    #E3C489;
-    --cream:      #F4EFE6;
-    --muted:      #8A97A8;
-    --beef:       #8C2F39;
-    --sea:        #3E7C8C;
+    /* brand */
+    --red:        #D32026;
+    --red-bright: #E8474C;
+    --red-deep:   #A5171C;
+
+    /* warm near-black neutrals, biased toward the brand red */
+    --ink:        #121011;
+    --panel:      #1C1719;
+    --panel-hi:   #2A2224;
+    --line:       #3A3032;
+    --bone:       #F5F0EC;
+    --bone-dim:   #D9CFCB;
+    --muted:      #A5989A;
 
     --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
     --font-th-display: "Noto Serif Thai", "Bodoni Moda", serif;
@@ -48,7 +51,7 @@
   body {
     margin: 0;
     background: var(--ink);
-    color: var(--cream);
+    color: var(--bone);
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 16px;
@@ -56,104 +59,54 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .page {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 var(--gutter);
-  }
+  .page { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 
   a { color: inherit; }
-
-  :focus-visible {
-    outline: 2px solid var(--gold-hi);
-    outline-offset: 3px;
-  }
-
-  /* ---------- shared devices ---------- */
+  :focus-visible { outline: 2px solid var(--red-bright); outline-offset: 3px; }
 
   .eyebrow {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.34em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--red-bright);
   }
 
   /* the slice mark: stacked hairlines, echoing fanned shabu slices */
-  .slices {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 22px;
-  }
-  .slices i {
-    display: block;
-    height: 1px;
-    background: var(--gold);
-    border-radius: 1px;
-  }
-  .slices i:nth-child(1) { width: 64px; opacity: 0.95; }
-  .slices i:nth-child(2) { width: 48px; opacity: 0.70; }
-  .slices i:nth-child(3) { width: 34px; opacity: 0.45; }
+  .slices { display: flex; flex-direction: column; gap: 4px; margin-bottom: 22px; }
+  .slices i { display: block; height: 1px; background: var(--red); border-radius: 1px; }
+  .slices i:nth-child(1) { width: 64px; opacity: 1; }
+  .slices i:nth-child(2) { width: 48px; opacity: 0.72; }
+  .slices i:nth-child(3) { width: 34px; opacity: 0.46; }
   .slices i:nth-child(4) { width: 22px; opacity: 0.24; }
 
-  /* ---------- cover ---------- */
+  /* ---------- cover: full brand red, the logo sits on its native ground ---------- */
 
   .cover {
-    min-height: min(94svh, 860px);
+    background: var(--red);
+    margin: 0 calc(-1 * var(--gutter));
+    padding: clamp(30px, 6vh, 66px) var(--gutter) clamp(38px, 7vh, 76px);
+    min-height: min(94svh, 880px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: clamp(28px, 6vh, 64px) 0 clamp(36px, 7vh, 72px);
     position: relative;
     overflow: hidden;
   }
   .cover::after {
     content: "";
     position: absolute;
-    inset: -40% -30% auto -30%;
-    height: 90%;
-    background: radial-gradient(60% 60% at 50% 40%, rgba(198,161,91,0.10), transparent 70%);
+    inset: auto -20% -55% -20%;
+    height: 70%;
+    background: radial-gradient(50% 60% at 50% 100%, rgba(18,16,17,0.28), transparent 72%);
     pointer-events: none;
   }
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    align-self: flex-start;
-    position: relative;
-    z-index: 1;
-  }
-  .brand .mark {
-    width: 40px; height: 40px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    display: grid; place-items: center;
-    color: var(--gold);
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    flex: none;
-  }
-  .brand .wordmark {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(15px, 2vw, 19px);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--cream);
-    line-height: 1.15;
-  }
-  .brand .wordmark small {
+  .brand { position: relative; z-index: 1; }
+  .brand img {
     display: block;
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.26em;
-    color: var(--muted);
-    margin-top: 5px;
+    width: clamp(190px, 26vw, 310px);
+    height: auto;
   }
 
   .cover-type { position: relative; z-index: 1; }
@@ -161,36 +114,34 @@
   .cover h1 {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(46px, 11vw, 132px);
-    line-height: 0.92;
+    font-size: clamp(44px, 10.5vw, 126px);
+    line-height: 0.94;
     letter-spacing: -0.015em;
     margin: 0;
+    color: #fff;
     text-wrap: balance;
   }
-  .cover h1 em {
-    font-style: italic;
-    color: var(--gold);
-    font-weight: 400;
-  }
-  .cover .rule {
-    height: 1px;
-    background: linear-gradient(90deg, var(--gold), rgba(198,161,91,0));
-    margin: 34px 0 26px;
-  }
+  /* red / white / black — the butcher's three tones */
+  .cover h1 em { font-style: italic; color: var(--ink); font-weight: 400; }
+
+  .cover .rule { height: 1px; background: rgba(255,255,255,0.55); margin: 32px 0 24px; }
+  .cover .rule.dark { background: rgba(18,16,17,0.35); }
+
+  .cover .eyebrow { color: rgba(255,255,255,0.82); }
+
   .cover .sub {
     font-family: var(--font-th-display);
     font-size: clamp(17px, 2.4vw, 23px);
     font-weight: 400;
-    color: var(--cream);
+    color: #fff;
     margin: 0;
-    max-width: 30ch;
+    max-width: 32ch;
     line-height: 1.55;
   }
 
   /* ---------- index ---------- */
 
   .index {
-    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     padding: 30px 0;
     display: flex;
@@ -208,12 +159,12 @@
     font-size: 19px;
     transition: color .25s ease;
   }
-  .index a:hover { color: var(--gold-hi); }
+  .index a:hover { color: var(--red-bright); }
   .index a b {
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 13px;
-    color: var(--gold);
+    color: var(--red-bright);
     font-variant-numeric: tabular-nums;
   }
 
@@ -221,10 +172,7 @@
 
   .chapter { padding: clamp(64px, 12vh, 130px) 0 0; }
 
-  .chapter-head {
-    position: relative;
-    margin-bottom: clamp(44px, 7vh, 84px);
-  }
+  .chapter-head { position: relative; margin-bottom: clamp(44px, 7vh, 84px); }
   .chapter-head .numeral {
     position: absolute;
     right: -0.06em;
@@ -234,8 +182,8 @@
     font-weight: 700;
     font-size: clamp(120px, 24vw, 280px);
     line-height: 0.8;
-    color: var(--accent);
-    opacity: 0.16;
+    color: var(--red);
+    opacity: 0.20;
     pointer-events: none;
     user-select: none;
   }
@@ -245,7 +193,6 @@
     font-size: clamp(30px, 5.4vw, 60px);
     line-height: 1.02;
     margin: 0 0 10px;
-    letter-spacing: 0.005em;
     position: relative;
   }
   .chapter-head .th {
@@ -255,23 +202,11 @@
     margin: 0;
     position: relative;
   }
-  .chapter-head .bar {
-    width: 90px;
-    height: 2px;
-    background: var(--accent);
-    margin-bottom: 26px;
-  }
-
-  #beef    { --accent: var(--beef); }
-  #seafood { --accent: var(--sea); }
+  .chapter-head .bar { width: 90px; height: 3px; background: var(--red); margin-bottom: 26px; }
 
   /* ---------- product ---------- */
 
-  .items {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(56px, 10vh, 112px);
-  }
+  .items { display: flex; flex-direction: column; gap: clamp(56px, 10vh, 112px); }
 
   .item {
     display: grid;
@@ -289,64 +224,35 @@
     position: relative;
     aspect-ratio: 4 / 5;
     background:
-      repeating-linear-gradient(135deg,
-        rgba(198,161,91,0.045) 0 2px,
-        transparent 2px 11px),
+      repeating-linear-gradient(135deg, rgba(211,32,38,0.07) 0 2px, transparent 2px 11px),
       linear-gradient(160deg, var(--panel-hi), var(--panel));
     border: 1px solid var(--line);
-    display: grid;
-    place-items: center;
     overflow: hidden;
   }
   .shot img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
     object-fit: cover;
     display: block;
     z-index: 0;
   }
   .shot .veil {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background:
-      linear-gradient(180deg,
-        rgba(7,15,26,0.34) 0%,
-        rgba(7,15,26,0.02) 38%,
-        rgba(7,15,26,0.10) 62%,
-        rgba(7,15,26,0.58) 100%);
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(18,16,17,0.34) 0%,
+      rgba(18,16,17,0.02) 38%,
+      rgba(18,16,17,0.10) 62%,
+      rgba(18,16,17,0.58) 100%);
   }
   .shot::before, .shot::after {
     content: "";
     position: absolute;
     width: 26px; height: 26px;
-    border: 1px solid var(--gold);
-    opacity: 0.62;
+    border: 2px solid var(--red);
     z-index: 2;
   }
   .shot::before { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
   .shot::after  { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
-
-  .shot .slot {
-    text-align: center;
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    line-height: 2.1;
-  }
-  .shot .slot strong {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    text-transform: none;
-  }
 
   .detail { min-width: 0; }
 
@@ -356,19 +262,13 @@
     font-size: clamp(26px, 3.8vw, 42px);
     line-height: 1.08;
     margin: 0 0 6px;
-    letter-spacing: 0.004em;
     text-wrap: balance;
   }
-  .name-en a {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .name-en a { text-decoration: none; display: inline-flex; align-items: center; gap: 12px; }
   .name-en a svg {
     width: 15px; height: 15px;
     opacity: 0;
-    color: var(--gold);
+    color: var(--red-bright);
     transition: opacity .25s ease;
     flex: none;
   }
@@ -377,7 +277,7 @@
   .name-th {
     font-family: var(--font-th-display);
     font-size: clamp(16px, 2.1vw, 20px);
-    color: var(--gold);
+    color: var(--red-bright);
     margin: 0 0 20px;
     font-weight: 500;
   }
@@ -385,29 +285,16 @@
   .desc {
     margin: 0 0 26px;
     max-width: var(--measure);
-    color: #D9D2C6;
+    color: var(--bone-dim);
     font-size: clamp(15px, 1.7vw, 17px);
   }
 
-  .chips {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-  }
-  .chips li {
-    font-size: 13px;
-    line-height: 1;
-    padding: 10px 15px;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 9px; }
+  .chips li { font-size: 13px; line-height: 1; padding: 10px 15px; border-radius: 2px; white-space: nowrap; }
   .chips .benefit {
-    background: rgba(198,161,91,0.10);
-    border: 1px solid rgba(198,161,91,0.22);
-    color: var(--gold-hi);
+    background: rgba(211,32,38,0.20);
+    border: 1px solid rgba(232,71,76,0.46);
+    color: var(--bone);
     font-weight: 500;
   }
   .chips .spec {
@@ -418,7 +305,7 @@
     font-variant-numeric: tabular-nums;
   }
   .chips .spec b {
-    color: var(--cream);
+    color: var(--bone);
     font-weight: 500;
     margin-right: 7px;
     letter-spacing: 0.16em;
@@ -430,26 +317,14 @@
 
   .closing {
     margin-top: clamp(80px, 14vh, 150px);
-    border-top: 1px solid var(--line);
+    border-top: 3px solid var(--red);
     padding: clamp(44px, 8vh, 78px) 0 clamp(40px, 7vh, 70px);
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 36px;
     align-items: end;
   }
-  .closing h3 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(24px, 3.4vw, 38px);
-    margin: 14px 0 12px;
-    line-height: 1.1;
-  }
-  .closing p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 15px;
-    max-width: 46ch;
-  }
+  .closing p { margin: 0; color: var(--muted); font-size: 15px; max-width: 46ch; }
   .tel {
     display: inline-flex;
     align-items: center;
@@ -459,20 +334,22 @@
     font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(28px, 4.6vw, 46px);
-    color: var(--gold-hi);
-    letter-spacing: 0.01em;
+    color: var(--red-bright);
     font-variant-numeric: tabular-nums;
     transition: color .25s ease;
   }
-  .tel:hover { color: var(--cream); }
-  .tel svg { width: 0.62em; height: 0.62em; flex: none; opacity: 0.7; }
-  .closing .meta {
-    text-align: right;
+  .tel:hover { color: var(--bone); }
+  .tel svg { width: 0.62em; height: 0.62em; flex: none; opacity: 0.75; }
+
+  .closing .sign { text-align: right; }
+  .closing .sign img { display: block; width: 150px; height: auto; margin-left: auto; opacity: 0.9; }
+  .closing .sign span {
+    display: block;
+    margin-top: 14px;
     color: var(--muted);
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    line-height: 2.2;
   }
 
   /* ---------- responsive ---------- */
@@ -481,9 +358,10 @@
     .item { grid-template-columns: 1fr; gap: 28px; }
     .item.flip .shot { order: 0; }
     .shot { aspect-ratio: 4 / 3; }
-    .chapter-head .numeral { font-size: clamp(96px, 34vw, 190px); opacity: 0.12; }
+    .chapter-head .numeral { font-size: clamp(96px, 34vw, 190px); opacity: 0.16; }
     .closing { grid-template-columns: 1fr; align-items: start; }
-    .closing .meta { text-align: left; }
+    .closing .sign { text-align: left; }
+    .closing .sign img { margin-left: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -493,12 +371,13 @@
 
   @media print {
     body { background: #fff; color: #111; }
-    .cover { min-height: auto; }
-    .cover::after, .chapter-head .numeral { display: none; }
-    .cover h1, .name-en, .chapter-head h2, .closing h3 { color: #111; }
+    .cover { min-height: auto; background: var(--red) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .chapter-head .numeral { display: none; }
+    .name-en, .chapter-head h2 { color: #111; }
+    .desc { color: #333; }
     .item { opacity: 1; transform: none; break-inside: avoid; page-break-inside: avoid; }
     .chapter { break-before: page; page-break-before: always; }
-    .shot { border-color: #bbb; background: #f4f4f2; }
+    .shot { border-color: #bbb; }
   }
 </style>
 
@@ -506,15 +385,14 @@
 
   <header class="cover">
     <div class="brand">
-      <span class="mark">ME</span>
-      <span class="wordmark">Meat Express<small>Imported Premium Ingredients</small></span>
+      <img src="images/logo-white.png" alt="MEAT EXPRESS — Pork &amp; Beef Butcher Shop">
     </div>
 
     <div class="cover-type">
       <p class="eyebrow">Catalogue 2026</p>
       <div class="rule"></div>
       <h1>Premium Selection<br><em>for Shabu &amp; Buffet</em></h1>
-      <div class="rule"></div>
+      <div class="rule dark"></div>
       <p class="sub">แคตตาล็อกสินค้าวัตถุดิบนำเข้าพรีเมียม</p>
     </div>
   </header>
@@ -539,7 +417,8 @@
 
         <article class="item" id="brisket">
           <div class="shot">
-            <img src="images/1-brisket.jpg" alt="เนื้อบริสเกตนำเข้าสไลซ์บาง เห็นลายไขมันแทรกทั่วแผ่น" loading="lazy" decoding="async"><span class="veil" aria-hidden="true"></span>
+            <img src="images/1-brisket.jpg" alt="เนื้อบริสเกตนำเข้าสไลซ์บาง เห็นลายไขมันแทรกทั่วแผ่น" loading="lazy" decoding="async">
+            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -556,7 +435,8 @@
 
         <article class="item flip" id="ribeye">
           <div class="shot">
-            <img src="images/2-ribeye.jpg" alt="เนื้อริบอายดิบ เห็นลายหินอ่อนและสันไขมันรอบชิ้น" loading="lazy" decoding="async"><span class="veil" aria-hidden="true"></span>
+            <img src="images/2-ribeye.jpg" alt="เนื้อริบอายดิบ เห็นลายหินอ่อนและสันไขมันรอบชิ้น" loading="lazy" decoding="async">
+            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -586,7 +466,8 @@
 
         <article class="item" id="crystal-shrimp">
           <div class="shot">
-            <img src="images/3-shrimp.jpg" alt="กุ้งแก้วปอกเปลือกแช่น้ำแข็งในชามสเตนเลส" loading="lazy" decoding="async"><span class="veil" aria-hidden="true"></span>
+            <img src="images/3-shrimp.jpg" alt="กุ้งแก้วปอกเปลือกแช่น้ำแข็งในชามสเตนเลส" loading="lazy" decoding="async">
+            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -603,7 +484,8 @@
 
         <article class="item flip" id="dolly-fish">
           <div class="shot">
-            <img src="images/4-fish.jpg" alt="เนื้อปลาดอลลี่แล่ขาว วางบนน้ำแข็ง" loading="lazy" decoding="async"><span class="veil" aria-hidden="true"></span>
+            <img src="images/4-fish.jpg" alt="เนื้อปลาดอลลี่แล่ขาว วางบนน้ำแข็ง" loading="lazy" decoding="async">
+            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -620,7 +502,8 @@
 
         <article class="item" id="chilean-mussels">
           <div class="shot">
-            <img src="images/5-mussel.jpg" alt="หอยแมลงภู่ชิลีจัดเรียงเป็นวงบนจานสีน้ำเงิน" loading="lazy" decoding="async"><span class="veil" aria-hidden="true"></span>
+            <img src="images/5-mussel.jpg" alt="หอยแมลงภู่ชิลีจัดเรียงเป็นวงบนจานสีน้ำเงิน" loading="lazy" decoding="async">
+            <span class="veil" aria-hidden="true"></span>
           </div>
           <div class="detail">
             <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -646,10 +529,9 @@
       <a class="tel" href="tel:+66838794554"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>083-879-4554</a>
       <p>สอบถามราคา ขนาดบรรจุ และระยะเวลาจัดส่ง &middot; ราคายังไม่รวม VAT 7%</p>
     </div>
-    <div class="meta">
-      Meat Express<br>
-      Shabu &amp; Buffet<br>
-      2026
+    <div class="sign">
+      <img src="images/logo-white.png" alt="" aria-hidden="true">
+      <span>Shabu &amp; Buffet &middot; 2026</span>
     </div>
   </footer>
 
