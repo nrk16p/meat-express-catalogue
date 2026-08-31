@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meat Express Selection — MEAT EXPRESS</title>
-<meta name="description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ โทร 083-879-4554">
+<meta name="description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ พร้อมเครื่องคำนวณต้นทุนต่อหัว โทร 083-879-4554">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23D32026'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-weight='bold' font-size='26' fill='%23FFFFFF' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Meat Express Selection — MEAT EXPRESS">
-<meta property="og:description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ โทร 083-879-4554">
+<meta property="og:description" content="แคตตาล็อกวัตถุดิบนำเข้าพรีเมียมสำหรับร้านชาบูและบุฟเฟ่ต์ โดย MEAT EXPRESS — เนื้อวัวนำเข้าและอาหารทะเลคัดคุณภาพ พร้อมเครื่องคำนวณต้นทุนต่อหัว โทร 083-879-4554">
 <meta property="og:image" content="images/1-brisket.jpg">
 <meta property="og:locale" content="th_TH">
 <link rel="preload" as="image" href="images/logo-red.png">
@@ -325,6 +325,133 @@
     text-transform: uppercase;
   }
 
+  /* ---------- spec list under each product ---------- */
+
+  .spec-list {
+    margin: 24px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    max-width: 460px;
+  }
+  .spec-list dt {
+    padding: 9px 20px 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grey);
+    white-space: nowrap;
+  }
+  .spec-list dd {
+    margin: 0;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .spec-list dd.code { font-weight: 600; letter-spacing: 0.06em; }
+  .spec-list dd.ask { color: var(--grey); font-style: italic; }
+
+  /* ---------- cost calculator ---------- */
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: clamp(24px, 4vw, 52px);
+    align-items: start;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 7px;
+  }
+  .field input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 13px 15px;
+    font-variant-numeric: tabular-nums;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field input:focus { border-color: var(--red); outline: none; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .result {
+    background: var(--paper-2);
+    border-top: 4px solid var(--red);
+    padding: clamp(22px, 3vw, 32px);
+  }
+  .result h3 {
+    margin: 0 0 18px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+  }
+  .result dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 0; }
+  .result dt, .result dd {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    margin: 0;
+  }
+  .result dt { color: var(--grey); }
+  .result dd { text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .result .total dt, .result .total dd {
+    border-bottom: 0;
+    padding-top: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .verdict {
+    margin-top: 18px;
+    padding: 15px 17px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .verdict.ok   { background: rgba(46,125,91,0.10); color: #2E7D5B; border: 1px solid rgba(46,125,91,0.3); }
+  .verdict.over { background: rgba(211,32,38,0.09); color: var(--red-deep); border: 1px solid rgba(211,32,38,0.3); }
+
+  /* ---------- ordering terms ---------- */
+
+  .terms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .terms div { background: var(--paper); padding: 22px 24px; }
+  .terms dt {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .terms dd { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.6; }
+  .terms dd.ask { color: var(--grey); font-style: italic; }
+
   /* ---------- mobile contact dock ---------- */
 
   .dock { display: none; }
@@ -372,6 +499,8 @@
     .item { grid-template-columns: 1fr; gap: 28px; }
     .item.flip .shot { order: 0; }
     .shot { aspect-ratio: 4 / 3; }
+    .calc-grid { grid-template-columns: 1fr; }
+    .spec-list { max-width: none; }
     .chapter-head .numeral { font-size: clamp(96px, 34vw, 190px); opacity: 0.09; }
     .closing { grid-template-columns: 1fr; align-items: start; }
     .closing .sign { text-align: left; }
@@ -412,6 +541,8 @@
     <p class="eyebrow">Content</p>
     <a href="#beef"><b>01</b> IMPORTED BEEF &middot; เนื้อวัวนำเข้า</a>
     <a href="#seafood"><b>02</b> SEAFOOD SELECTION &middot; อาหารทะเลนำเข้า</a>
+    <a href="#cost"><b>03</b> COST PER HEAD &middot; คำนวณต้นทุนต่อหัว</a>
+    <a href="#terms"><b>04</b> ORDERING &middot; เงื่อนไขการสั่งซื้อ</a>
   </nav>
 
   <main>
@@ -440,6 +571,12 @@
               <li class="benefit">เพิ่มมูลค่าชุดพรีเมียม</li>
               <li class="spec"><b>สเปก</b>1.5 – 2.0 มม.</li>
             </ul>
+            <dl class="spec-list">
+              <dt>รหัส</dt><dd class="code">ME-BF-101</dd>
+              <dt>บรรจุ</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>แหล่งผลิต</dt><dd>สหรัฐอเมริกา / ออสเตรเลีย</dd>
+              <dt>เก็บรักษา</dt><dd>แช่แข็ง −18°C</dd>
+            </dl>
           </div>
         </article>
 
@@ -457,6 +594,12 @@
               <li class="benefit">เนื้อนุ่มไม่เหนียว</li>
               <li class="benefit">เหมาะสำหรับแพ็กเกจหรู</li>
             </ul>
+            <dl class="spec-list">
+              <dt>รหัส</dt><dd class="code">ME-BF-102</dd>
+              <dt>บรรจุ</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>แหล่งผลิต</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>เก็บรักษา</dt><dd>แช่แข็ง −18°C</dd>
+            </dl>
           </div>
         </article>
 
@@ -487,6 +630,12 @@
               <li class="benefit">คุม Cost ง่าย</li>
               <li class="benefit">เกรดพรีเมียม</li>
             </ul>
+            <dl class="spec-list">
+              <dt>รหัส</dt><dd class="code">ME-SF-201</dd>
+              <dt>บรรจุ</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>แหล่งผลิต</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>เก็บรักษา</dt><dd>แช่แข็ง −18°C</dd>
+            </dl>
           </div>
         </article>
 
@@ -504,6 +653,12 @@
               <li class="benefit">ต้นทุนต่ำต่อเสิร์ฟ</li>
               <li class="benefit">จัดจานง่าย</li>
             </ul>
+            <dl class="spec-list">
+              <dt>รหัส</dt><dd class="code">ME-SF-202</dd>
+              <dt>บรรจุ</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>แหล่งผลิต</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>เก็บรักษา</dt><dd>แช่แข็ง −18°C</dd>
+            </dl>
           </div>
         </article>
 
@@ -521,10 +676,91 @@
               <li class="benefit">เพิ่มความหรูหรา</li>
               <li class="spec"><b>Origin</b>ชิลี</li>
             </ul>
+            <dl class="spec-list">
+              <dt>รหัส</dt><dd class="code">ME-SF-203</dd>
+              <dt>บรรจุ</dt><dd class="ask">สอบถามฝ่ายขาย</dd>
+              <dt>แหล่งผลิต</dt><dd>ชิลี</dd>
+              <dt>เก็บรักษา</dt><dd>แช่แข็ง −18°C</dd>
+            </dl>
           </div>
         </article>
 
       </div>
+    </section>
+
+    <section class="chapter" id="cost">
+      <div class="chapter-head">
+        <div class="numeral" aria-hidden="true">03</div>
+        <div class="bar"></div>
+        <h2>Cost per Head</h2>
+        <p class="th">คำนวณต้นทุนวัตถุดิบต่อหัว สำหรับตั้งราคาบุฟเฟ่ต์</p>
+      </div>
+
+      <div class="calc-grid">
+        <form id="calc" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-price">ราคาขาย (บาท/หัว)</label>
+              <input id="c-price" type="number" inputmode="decimal" min="0" step="10" value="399">
+            </div>
+            <div class="field">
+              <label for="c-fc">เป้า Food Cost (%)</label>
+              <input id="c-fc" type="number" inputmode="decimal" min="1" max="100" step="1" value="35">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-beef-g">เนื้อต่อหัว (กรัม)</label>
+              <input id="c-beef-g" type="number" inputmode="decimal" min="0" step="10" value="250">
+            </div>
+            <div class="field">
+              <label for="c-beef-kg">ราคาเนื้อ (บาท/กก.)</label>
+              <input id="c-beef-kg" type="number" inputmode="decimal" min="0" step="10" value="320">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-sea-g">ทะเลต่อหัว (กรัม)</label>
+              <input id="c-sea-g" type="number" inputmode="decimal" min="0" step="10" value="100">
+            </div>
+            <div class="field">
+              <label for="c-sea-kg">ราคาทะเล (บาท/กก.)</label>
+              <input id="c-sea-kg" type="number" inputmode="decimal" min="0" step="10" value="350">
+            </div>
+          </div>
+        </form>
+
+        <div class="result" aria-live="polite">
+          <h3>ผลคำนวณต่อหัว</h3>
+          <dl>
+            <dt>งบวัตถุดิบตามเป้า</dt><dd id="r-budget">—</dd>
+            <dt>ต้นทุนเนื้อ</dt><dd id="r-beef">—</dd>
+            <dt>ต้นทุนอาหารทะเล</dt><dd id="r-sea">—</dd>
+            <dt>รวมโปรตีน</dt><dd id="r-protein">—</dd>
+            <dt>เหลือสำหรับผัก น้ำซุป น้ำจิ้ม</dt><dd id="r-left">—</dd>
+            <div class="total" style="display:contents"><dt>Food Cost จริง</dt><dd id="r-actual">—</dd></div>
+          </dl>
+          <p class="verdict ok" id="r-verdict">—</p>
+        </div>
+      </div>
+
+      <p class="desc" style="margin-top:28px">ราคาที่ตั้งไว้เป็นค่าเริ่มต้นสำหรับลองคำนวณ ฝ่ายขายกรอกราคาจริงของล็อตที่เสนอทับได้เลย ตัวเลขคิดจากน้ำหนักหลังตัดแต่ง ยังไม่รวมค่าขนส่งและของเสียหน้าร้าน</p>
+    </section>
+
+    <section class="chapter" id="terms">
+      <div class="chapter-head">
+        <div class="numeral" aria-hidden="true">04</div>
+        <div class="bar"></div>
+        <h2>Ordering</h2>
+        <p class="th">เงื่อนไขการสั่งซื้อและจัดส่ง</p>
+      </div>
+
+      <dl class="terms">
+        <div><dt>ยอดสั่งขั้นต่ำ</dt><dd class="ask">สอบถามฝ่ายขาย</dd></div>
+        <div><dt>รอบจัดส่ง</dt><dd class="ask">สอบถามฝ่ายขาย</dd></div>
+        <div><dt>พื้นที่จัดส่ง</dt><dd class="ask">สอบถามฝ่ายขาย</dd></div>
+        <div><dt>เงื่อนไขชำระเงิน</dt><dd class="ask">สอบถามฝ่ายขาย</dd></div>
+      </dl>
     </section>
 
   </main>
@@ -574,6 +810,65 @@
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
     items.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* cost per head — everything the sales rep needs to answer
+     "แล้วร้านผมเหลือกำไรเท่าไหร่" on the spot */
+  (function () {
+    var form = document.getElementById('calc');
+    if (!form) return;
+
+    var ids = ['c-price', 'c-fc', 'c-beef-g', 'c-beef-kg', 'c-sea-g', 'c-sea-kg'];
+    var input = {};
+    ids.forEach(function (id) { input[id] = document.getElementById(id); });
+
+    var out = {};
+    ['budget', 'beef', 'sea', 'protein', 'left', 'actual', 'verdict'].forEach(function (k) {
+      out[k] = document.getElementById('r-' + k);
+    });
+
+    function num(el) {
+      var v = parseFloat(el.value);
+      return isFinite(v) && v >= 0 ? v : 0;
+    }
+    function baht(n) {
+      var s = Math.abs(Math.round(n)).toLocaleString('th-TH');
+      return (n < 0 ? '-฿' : '฿') + s;
+    }
+
+    function calc() {
+      var price   = num(input['c-price']);
+      var fcTarget = num(input['c-fc']);
+      var beef = num(input['c-beef-g']) / 1000 * num(input['c-beef-kg']);
+      var sea  = num(input['c-sea-g'])  / 1000 * num(input['c-sea-kg']);
+
+      var budget  = price * fcTarget / 100;
+      var protein = beef + sea;
+      var left    = budget - protein;
+      var actual  = price > 0 ? protein / price * 100 : 0;
+
+      out.budget.textContent  = baht(budget);
+      out.beef.textContent    = baht(beef);
+      out.sea.textContent     = baht(sea);
+      out.protein.textContent = baht(protein);
+      out.left.textContent    = baht(left);
+      out.actual.textContent  = actual.toFixed(1) + '%';
+
+      if (price <= 0) {
+        out.verdict.className = 'verdict over';
+        out.verdict.textContent = 'ใส่ราคาขายต่อหัวก่อน';
+      } else if (left >= 0) {
+        out.verdict.className = 'verdict ok';
+        out.verdict.textContent = 'เข้าเป้า — เหลือ ' + baht(left) + ' ต่อหัว สำหรับผัก น้ำซุป น้ำจิ้ม และของอื่น';
+      } else {
+        out.verdict.className = 'verdict over';
+        out.verdict.textContent = 'เกินงบ ' + baht(-left) + ' ต่อหัว — ลดกรัมต่อหัว ขึ้นราคาบุฟเฟ่ต์ หรือสลับไปสินค้าที่ต้นทุนต่ำกว่า';
+      }
+    }
+
+    ids.forEach(function (id) { input[id].addEventListener('input', calc); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    calc();
   })();
 </script>
 </body>
